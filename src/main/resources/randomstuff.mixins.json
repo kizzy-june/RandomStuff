@@ -6,7 +6,8 @@
     "GameRendererMixin",
     "SplashRendererMixin",
     "MainClientClassMixin",
-    "FogRendererMixin"
+    "FogRendererMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

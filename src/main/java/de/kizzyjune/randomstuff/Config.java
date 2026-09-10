@@ -8,6 +8,7 @@ public class Config {
 
     public static final ModConfigSpec.BooleanValue STRETCH_MODE;
     public static final ModConfigSpec.BooleanValue THE_FOG_IS_COMING;
+    public static final ModConfigSpec.BooleanValue APPLY_FALLDAMAGE_EVERY_HEIGHT;
 
 
     static {
@@ -17,6 +18,9 @@ public class Config {
         THE_FOG_IS_COMING = BUILDER
                 .comment("Makes the fog way more intense")
                 .define("theFogIsComing",false);
+        APPLY_FALLDAMAGE_EVERY_HEIGHT = BUILDER
+                .comment("Applies fall damage on every fall height")
+                .define("applyFallDamageEveryHeight",false);
 
         SPEC = BUILDER.build();
     }
