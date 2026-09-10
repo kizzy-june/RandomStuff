@@ -19,7 +19,7 @@ public class SplashRendererMixin {
     @Shadow
     private Component splash;
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void changeSplash(Component splash, CallbackInfo ci) {
+    private void changeSplash1(Component splash, CallbackInfo ci) {
         String[] splashes = {"Just Monika... No wait, just, uhh, Steve", "I don't know what to put here"};
         // Hehe the second one will never show up
         int index = ThreadLocalRandom.current().nextInt(0,splashes.length - 1);
