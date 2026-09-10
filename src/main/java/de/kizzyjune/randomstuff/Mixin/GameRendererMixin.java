@@ -13,7 +13,7 @@ public class GameRendererMixin {
             at = @At(value = "STORE", ordinal = 0),
             name = "spinningEffectIntensity"
     )
-    private float modifySpinningIntensity(float original) {
+    private float stretchMode(float original) {
         if (Config.STRETCH_MODE.getAsBoolean()) {
             return 1.55F;
         }
