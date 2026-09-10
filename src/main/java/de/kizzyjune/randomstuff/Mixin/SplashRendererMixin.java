@@ -20,16 +20,15 @@ public class SplashRendererMixin {
     private Component splash;
     @Inject(method = "<init>", at = @At("TAIL"))
     private void changeSplash(Component splash, CallbackInfo ci) {
-        String[] splashes = {"Just Monika... No wait, just, uhh, Steve", "I don't know what to put here"};
         // Hehe the second one will never show up
-        int index = ThreadLocalRandom.current().nextInt(0,splashes.length - 1);
+        int index = ThreadLocalRandom.current().nextInt(0,Consts.splashes.length - 1);
         if (index == 0) {
-            this.splash = Component.literal(splashes[index]).withColor(-3047306);
+            this.splash = Component.literal(Consts.splashes[index]).withColor(-3047306);
             // Thanks to pixiesp1991arts for the DDLC colour palette.
             // https://www.color-hex.com/color-palette/1034923
             return;
         }
-        this.splash = Component.literal(splashes[index]).withColor(Consts.colour);
+        this.splash = Component.literal(Consts.splashes[index]).withColor(Consts.colour);
 
     }
 }

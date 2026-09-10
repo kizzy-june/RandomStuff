@@ -9,6 +9,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue STRETCH_MODE;
     public static final ModConfigSpec.BooleanValue THE_FOG_IS_COMING;
     public static final ModConfigSpec.BooleanValue APPLY_FALLDAMAGE_EVERY_HEIGHT;
+    public static final ModConfigSpec.BooleanValue JUST_MONIKA;
 
 
     static {
@@ -21,6 +22,9 @@ public class Config {
         APPLY_FALLDAMAGE_EVERY_HEIGHT = BUILDER
                 .comment("Applies fall damage on every fall height")
                 .define("applyFallDamageEveryHeight",false);
+        JUST_MONIKA = BUILDER
+                .comment("Just Monika.")
+                .define("justMonika",false);
 
         SPEC = BUILDER.build();
     }
