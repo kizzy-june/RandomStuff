@@ -21,16 +21,9 @@ public class SplashRendererMixin {
     private Component splash;
     @Inject(method = "<init>", at = @At("TAIL"))
     private void changeSplash(Component splash, CallbackInfo ci) {
-        // Hehe the second one will never show up
-        int index = ThreadLocalRandom.current().nextInt(0, ConstsAndVars.splashes.length - 1);
-        if (index == 0) {
-            this.splash = Component.literal(ConstsAndVars.splashes[index]).withColor(-3047306);
-            // Thanks to pixiesp1991arts for the DDLC colour palette.
-            // https://www.color-hex.com/color-palette/1034923
-            return;
-        }
+        int index = ThreadLocalRandom.current().nextInt(0, ConstsAndVars.splashes.length);
         boolean moniBirthday = JustMonika.current.equals(JustMonika.moni);
-        this.splash = (moniBirthday) ? Component.literal("Happy birthday Monika") : Component.literal(ConstsAndVars.splashes[index]).withColor(ConstsAndVars.colour);
+        this.splash = (moniBirthday) ? Component.literal("Happy birthday Monika") : Component.literal(ConstsAndVars.splashes[index]).withColor(-3047306);
     }
     public static class JustMonika {
         private static final MonthDay moni = MonthDay.of(9, 22);
