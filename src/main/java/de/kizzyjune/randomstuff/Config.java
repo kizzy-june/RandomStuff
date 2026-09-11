@@ -10,6 +10,9 @@ public class Config {
     public static final ModConfigSpec.BooleanValue THE_FOG_IS_COMING;
     public static final ModConfigSpec.BooleanValue APPLY_FALLDAMAGE_EVERY_HEIGHT;
     public static final ModConfigSpec.BooleanValue JUST_MONIKA;
+    public static final ModConfigSpec.BooleanValue BIG_STARS;
+    public static final ModConfigSpec.BooleanValue VERY_BIG_STARS;
+    public static final ModConfigSpec.BooleanValue MAKE_ALMOST_EVERYTHING_LEASHABLE;
 
 
     static {
@@ -25,6 +28,15 @@ public class Config {
         JUST_MONIKA = BUILDER
                 .comment("Just Monika.")
                 .define("justMonika",false);
+        BIG_STARS = BUILDER
+                .comment("Makes the stars bigger,\n requires very big stars to be off.\n Requires resource reload after changing (aka F3 + T)")
+                .define("bigStars",false);
+        VERY_BIG_STARS = BUILDER
+                .comment("Makes the stars even bigger,\n requires big stars to be off.\n Requires resource reload after changing (aka F3 + T)")
+                .define("veryBigStars",false);
+        MAKE_ALMOST_EVERYTHING_LEASHABLE = BUILDER
+                .comment("Makes almost everything leashable yay")
+                .define("leashable",false);
 
         SPEC = BUILDER.build();
     }

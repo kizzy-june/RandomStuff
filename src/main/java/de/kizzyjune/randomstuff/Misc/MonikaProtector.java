@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import org.slf4j.Logger;
 
 public class MonikaProtector {
+    private static final boolean alwaysCrash = false;
     public static void verifyIfMonika() {
         Logger LOGGER = LogUtils.getLogger();
         boolean monikaExists = false;
@@ -13,9 +14,14 @@ public class MonikaProtector {
             LOGGER.info("Monika exists, moving on...");
             monikaExists = true;
         }
-        if (!monikaExists) {
-            IllegalStateException e = new IllegalStateException("Monika must exist on index 0 of the splash array.");
-            Minecraft.getInstance().emergencySaveAndCrash(new CrashReport("Monika not found", e));
+        if (!monikaExists || alwaysCrash) {
+            JustMonika jm = new JustMonika("Monika must exist on index 0 of the splash array.");
+            Minecraft.getInstance().emergencySaveAndCrash(new CrashReport("Monika not found", jm));
         }
+    }
+    public static class JustMonika extends RuntimeException {
+      private JustMonika(String in) {
+          super(in);
+      }
     }
 }
