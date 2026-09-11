@@ -1,6 +1,6 @@
 package de.kizzyjune.randomstuff.Mixin;
 
-import de.kizzyjune.randomstuff.Misc.Consts;
+import de.kizzyjune.randomstuff.Misc.ConstsAndVars;
 import net.minecraft.client.gui.components.SplashRenderer;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.time.MonthDay;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Mixin(SplashRenderer.class)
@@ -21,14 +22,18 @@ public class SplashRendererMixin {
     @Inject(method = "<init>", at = @At("TAIL"))
     private void changeSplash(Component splash, CallbackInfo ci) {
         // Hehe the second one will never show up
-        int index = ThreadLocalRandom.current().nextInt(0,Consts.splashes.length - 1);
+        int index = ThreadLocalRandom.current().nextInt(0, ConstsAndVars.splashes.length - 1);
         if (index == 0) {
-            this.splash = Component.literal(Consts.splashes[index]).withColor(-3047306);
+            this.splash = Component.literal(ConstsAndVars.splashes[index]).withColor(-3047306);
             // Thanks to pixiesp1991arts for the DDLC colour palette.
             // https://www.color-hex.com/color-palette/1034923
             return;
         }
-        this.splash = Component.literal(Consts.splashes[index]).withColor(Consts.colour);
-
+        boolean moniBirthday = JustMonika.current.equals(JustMonika.moni);
+        this.splash = (moniBirthday) ? Component.literal("Happy birthday Monika") : Component.literal(ConstsAndVars.splashes[index]).withColor(ConstsAndVars.colour);
+    }
+    public static class JustMonika {
+        private static final MonthDay moni = MonthDay.of(9, 22);
+        private static MonthDay current = MonthDay.now();
     }
 }
