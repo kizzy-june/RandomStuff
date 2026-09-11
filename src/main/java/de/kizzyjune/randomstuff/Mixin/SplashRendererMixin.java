@@ -23,7 +23,7 @@ public class SplashRendererMixin {
     private void changeSplash(Component splash, CallbackInfo ci) {
         int index = ThreadLocalRandom.current().nextInt(0, ConstsAndVars.splashes.length);
         boolean moniBirthday = JustMonika.current.equals(JustMonika.moni);
-        this.splash = (moniBirthday) ? Component.literal("Happy birthday Monika") : Component.literal(ConstsAndVars.splashes[index]).withColor(-3047306);
+        this.splash = (moniBirthday) ? Component.literal("Happy birthday Monika") : Component.literal(ConstsAndVars.splashes[index]).withColor(ConstsAndVars.colour);
     }
     public static class JustMonika {
         private static final MonthDay moni = MonthDay.of(9, 22);
