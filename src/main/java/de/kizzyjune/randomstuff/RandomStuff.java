@@ -10,8 +10,13 @@ import net.neoforged.fml.ModContainer;
 @Mod(RandomStuff.MODID)
 public class RandomStuff {
     static {
-        MessageBox.error("weelcom to the mincraft hoep u hav fun");
-        MessageBox.error("sory for me no good english");
+        final String[] goofyAhhMessagesIdk = {"weelcom to the mincraft hoep u hav fun", "sory for me no good english"};
+        final byte arrayLength = (byte) (goofyAhhMessagesIdk.length);
+        byte index = 0;
+        while (index != arrayLength) {
+            MessageBox.error(goofyAhhMessagesIdk[index]);
+            index++;
+        }
     }
     // Define mod id in a common place for everything to reference
     public static final String MODID = "randomstuff";
