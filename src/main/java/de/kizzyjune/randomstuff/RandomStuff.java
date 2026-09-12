@@ -11,8 +11,8 @@ import net.neoforged.fml.ModContainer;
 public class RandomStuff {
     static {
         final String[] goofyAhhMessagesIdk = {"weelcom to the mincraft hoep u hav fun", "sory for me no good english"};
-        final byte arrayLength = (byte) (goofyAhhMessagesIdk.length);
-        byte index = 0;
+        final int arrayLength = goofyAhhMessagesIdk.length;
+        int index = 0;
         while (index != arrayLength) {
             MessageBox.error(goofyAhhMessagesIdk[index]);
             index++;
