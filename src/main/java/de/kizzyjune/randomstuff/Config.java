@@ -20,10 +20,10 @@ public class Config {
                 .comment("Stretches rendering.")
                 .define("stretchMode", false);
         THE_FOG_IS_COMING = BUILDER
-                .comment("Makes the fog way more intense")
+                .comment("Makes the fog way more intense.")
                 .define("theFogIsComing",false);
         APPLY_FALLDAMAGE_EVERY_HEIGHT = BUILDER
-                .comment("Applies fall damage on every fall height")
+                .comment("Applies fall damage on every fall height.")
                 .define("applyFallDamageEveryHeight",false);
         JUST_MONIKA = BUILDER
                 .comment("Just Monika.")

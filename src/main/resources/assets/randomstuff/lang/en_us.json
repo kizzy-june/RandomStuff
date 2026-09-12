@@ -1,3 +1,9 @@
 {
-  "randomstuff.configuration.stretchMode": "Stretch mode"
+  "randomstuff.configuration.stretchMode": "Stretch mode",
+  "randomstuff.configuration.theFogIsComing": "The fog is coming",
+  "randomstuff.configuration.bigStars": "Big stars",
+  "randomstuff.configuration.veryBigStars": "*Very* big stars",
+  "randomstuff.configuration.leashable": "Make (almost) everything leashable",
+  "randomstuff.configuration.applyFallDamageEveryHeight": "Apply fall damage every height",
+  "randomstuff.configuration.justMonika": "Just Monika"
 }
